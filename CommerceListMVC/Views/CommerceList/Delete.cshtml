@@ -1,0 +1,9 @@
+﻿@using Entitites.Concrete;
+@model CommerceList
+
+
+<p>Listeyi silmek istediğinizden emin misiniz?</p>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="CommerceListID" />
+    <input type="submit" value="Sil" />
+</form>

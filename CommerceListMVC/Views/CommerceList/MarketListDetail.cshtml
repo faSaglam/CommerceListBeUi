@@ -1,0 +1,43 @@
+﻿@using Entities.Concreate.ViewModels;
+@using Entitites.Concrete;
+@*@model List<MarketListDetailViewModel>*@
+@model List<MarketListDetailViewModel>
+
+
+@*
+<ol>
+    @foreach(var listItem in Model)
+    {
+
+        <li>
+            <button class="btn btn-light">
+                @Html.ActionLink( "✓", "Bought", new {
+            CommerceListId = listItem.CommerceListId , 
+            ProductId = listItem.ProductId
+          } )</button></li>
+     
+      
+    }
+   
+</ol>
+  *@
+
+<form asp-action="Bought">
+
+     @for(var i = 0 ; i < Model.Count() ; i ++ ){
+
+    <input asp-for="@Model[i].IsBought" />
+    
+
+    <span>@Model[i].ProductName -- @Model[i].Description</span>
+    <br />
+    <input type="hidden" asp-for="@Model[i].ProductId"/>
+    <input type="hidden" asp-for="@Model[i].CommerceListId" />
+
+    }
+    <button>Alışverişi tamamla</button>
+
+
+
+  </form>
+ 

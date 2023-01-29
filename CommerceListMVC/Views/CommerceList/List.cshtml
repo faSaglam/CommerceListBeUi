@@ -1,0 +1,47 @@
+﻿@using Entities.Concreate.ViewModels;
+
+@model List<CommerceListViewModel>
+
+
+
+<h2 class="text-center mb-2">Listelerim</h2>
+
+
+<table class="table table-striped table-dark table-hover">
+    <thead>
+        <tr>
+
+            <th></th>
+            <th> </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var list in Model)
+
+        {
+            <tr >
+                <td></td>
+                <td >@list.CommerceListID</td>
+                <td>@list.CommerceListName</td>
+                <td> <button class="btn btn-light">@Html.ActionLink( "Aktifleştir", "CurrentList", new { CommerceListId = list.CommerceListID} )</button> </td>
+                <td> <button class="btn btn-light"> @Html.ActionLink( "Detay", "Detail", new { CommerceListId = list.CommerceListID } )</button></td>
+                <td><button class="btn btn-light"> @Html.ActionLink("Alışverişe Çık","GoToMarket",new {CommerceListId = list.CommerceListID})</button></td>
+                <td><button class="btn btn-light"> @Html.ActionLink("Sil","Delete",new {CommerceListId = list.CommerceListID})</button></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<hr/>
+<a asp-action="MarketList"> Alış-veriş'e çıktığın listeleri görüntüle.</a>
+<hr/>
+<br />
+<a asp-action="Create" asp-controller="CommerceList">Yeni bir liste oluştur.</a>
+

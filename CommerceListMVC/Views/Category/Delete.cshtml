@@ -1,0 +1,8 @@
+﻿@using Entitites.Concrete;
+@model Category
+
+<p>Kategoryi silmek istediğinizden emin misiniz?</p>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="CategoryID" />
+    <input type="submit" value="Sil" />
+</form>

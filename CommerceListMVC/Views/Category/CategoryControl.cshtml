@@ -1,0 +1,26 @@
+﻿@using Entities.Concreate.ViewModels;
+@model List<CategoryListDetailedViewModel>
+
+<h1>Category</h1>
+<button class="btn btn-outline-success"><a asp-controller="Category" asp-action="Add">Kategori ekle</a></button>
+<table class="table table-striped">
+
+    <thead>
+     <th>Kategori ID</th>
+    <th>Kategori Adı</th>
+    <th>İşlemler</th>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    <button class="btn btn-light">@Html.ActionLink( "Güncelle", "Update", new { CategoryID = item.CategoryID } )</button>
+                    <button class="btn btn-light">@Html.ActionLink( "Sil", "Delete", new { CategoryID = item.CategoryID } )</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

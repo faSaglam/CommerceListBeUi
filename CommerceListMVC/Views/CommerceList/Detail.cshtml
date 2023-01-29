@@ -1,0 +1,31 @@
+﻿@using Entities.Concreate.ViewModels;
+@using Entitites.Concrete;
+
+@model List<CommerceListDetailViewModel>
+
+<p>@ViewBag.Name</p>
+<table class="table">
+    <thead>
+        <th>Fotoğraf</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Açıklaması</th>
+        <th></th>
+    </thead>
+    <tbody>
+      
+            @foreach (var item in Model)
+            {<tr>
+                  <td>
+                    <img style="height:4rem;width:4rem" src="@item.PhotoUrl" class="rounded mx-auto-d-block" alt="@item.ProductName" />
+                    </td>
+                <td>@item.ProductName</td>
+                <td>@item.Description</td>
+                <td> @Html.ActionLink( "Açıklama ekle", "AddDescription", new { ProductId = item.ProductId , CommerceListId = item.CommerceListId} )</td>
+                <td> @Html.ActionLink( "Ürünü kaldır", "DetailDelete", new { ProductID = item.ProductId , CommerceListID = item.CommerceListId} )</td>
+            </tr>
+            }
+        
+    </tbody>
+
+</table>
+

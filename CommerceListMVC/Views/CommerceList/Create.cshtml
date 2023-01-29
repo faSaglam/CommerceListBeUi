@@ -1,0 +1,28 @@
+﻿@using Entities.Concreate.ViewModels;
+
+
+@model CommerceListCreateViewModel
+
+
+<form asp-action="Create">
+     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="CommerceListName" class="control-label">CommerceListName</label>
+        <input asp-for="CommerceListName" class="form-control" />
+        <span asp-validation-for="CommerceListName" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>
+<p>@ViewBag.Message</p>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

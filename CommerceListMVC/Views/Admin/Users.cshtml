@@ -1,0 +1,23 @@
+﻿@using Entitites.Concrete;
+@model List<User>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+           
+    </thead>
+    <tbody>
+        @foreach (var item in Model ?? new())
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+             
+            </tr>
+        }
+    </tbody>
+</table>

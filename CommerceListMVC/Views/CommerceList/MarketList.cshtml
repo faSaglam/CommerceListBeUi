@@ -1,0 +1,20 @@
+﻿@using Entities.Concreate.ViewModels;
+@model List<CommerceListViewModel>
+
+<p>Alışverişe çıkacağın listeler:</p>
+<table class="table">
+    <thead>
+     <th></th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.CommerceListName</td>
+                <td>@Html.ActionLink("Görüntüle","MarketListDetail",new {CommerceListId = item.CommerceListID})</td>
+            </tr>
+        }
+    </tbody>
+</table>

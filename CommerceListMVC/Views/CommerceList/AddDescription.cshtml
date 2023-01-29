@@ -1,0 +1,10 @@
+﻿@using Entitites.Concrete;
+@model ProductCommerceList
+
+<form asp-action="AddDescription">
+    <input asp-for=Description/>
+    <input type="hidden" asp-for="CommerceListID"/>
+    <select asp-for="ProductID"  asp-items="@ViewBag.Products"></select>
+    <input type="submit" value="Açıklma Ekle" />
+</form>
+

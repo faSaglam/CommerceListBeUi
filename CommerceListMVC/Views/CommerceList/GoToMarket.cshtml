@@ -1,0 +1,15 @@
+﻿;
+@using Entitites.Concrete;
+@model CommerceList
+<p>Alışverişe çıkacağın liste:</p>
+<ol>
+    @foreach(var item in ViewBag.Products)
+    {
+        <li>@item.ProductName -- @item.Description</li>
+    }
+
+</ol>
+<form asp-action="GoToMarket"> 
+    <input type="hidden" asp-for="CommerceListID"/>
+    <input type="submit" value="Onayla" />
+</form>

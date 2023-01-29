@@ -1,0 +1,8 @@
+﻿@using Entitites.Concrete;
+@model Product
+
+<p>Ürünü silmek istediğinizden emin misiniz?</p>
+<form asp-action="Delete"> 
+    <input type="hidden" asp-for="ProductID" />
+    <input type="submit" value="Sil" />
+</form>
